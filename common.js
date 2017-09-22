@@ -9,6 +9,7 @@ function getSign(cb){
     success(res){
       console.log(res);
       var kid = wx.getStorageSync("kid");
+      console.log('kid：',kid);
       wx.request({
         url: 'https://shop.playonwechat.com/api/auth-by-three?code=${res.code}' + '&operator_id=' + kid,
         data: {

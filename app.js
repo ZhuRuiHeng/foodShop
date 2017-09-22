@@ -11,20 +11,20 @@ App({
     sharecode: "",
     authStatic: false,
     loginStatic: false,
-    authSuccess: false,
-    kid:''
+    authSuccess: false
   },
   onLaunch: function () {
-   
+    var that =this;
     wx.showShareMenu({
       withShareTicket: true
     })
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
-    console.log(extConfig.kid);
-    this.operator_id = extConfig.kid;//extConfig.kid;
-    this.operator_id = 39;//extConfig.kid;
-    wx.setStorageSync('kid', this.operator_id);
-    kid = this.operator_id;
+    this.data.kid = extConfig.kid;
+    this.data.kid = 66;//extConfig.kid;
+
+    console.log(this.data.kid)
+    wx.setStorageSync('kid', this.data.kid);
+    console.log('111', this.data.kid);
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || [];
     // var value = wx.getStorageSync('mobile');
@@ -35,17 +35,19 @@ App({
       title: '加载中',
     })
     wx.login({
+      
       success: function (res) {
-         //console.log(res);
+        
         if (res.code) {
-          //console.log(res.code);
+          console.log(res.code);
           //发起网络请求
           wx.request({
-            url: 'https://shop.playonwechat.com/api/auth?code=${res.code}' + '&operator_id=' + kid,
+            url: 'https://shop.playonwechat.com/api/auth?code=${res.code}' + '&operator_id=' + that.data.kid,
             data: {
               code: res.code
             },
             success: function (res) {
+              
               console.log(res);
               that.data.sign = res.data.data.sign;
               // that.data.mobile = res.data.data.mobile;
@@ -83,7 +85,7 @@ App({
                       country: country
                     };
                     wx.request({
-                      url: 'https://shop.playonwechat.com/api/save-user-info?sign=' + that.data.sign + '&operator_id=' +  '&operator_id=' + app.data.kid,
+                      url: 'https://shop.playonwechat.com/api/save-user-info?sign=' + that.data.sign + '&operator_id=' +  '&operator_id=' + that.data.kid,
                       method: 'POST',
                       data: {
                         info: userData
