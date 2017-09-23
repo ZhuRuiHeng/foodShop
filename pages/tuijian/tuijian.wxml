@@ -14,7 +14,31 @@
   <view class='invite_wrap'>
     <view class='invite_title'>2.邀请新用户达到指定数量，将额外获得不同奖励</view>
 
-    <view class='invite_content two'></view>
+    <!-- <view class='invite_content two'></view> -->
+    <view class="yaoqing">
+        <view class="lists">
+            <view class="direct">
+                <view class="diImg"><image src="../images/liwu.png" style="width:60rpx;" mode="widthFix"></image></view>
+                <view class="gaodu"><view class="height" style="height:100rpx;"></view></view>
+                <view class="bottom"><text>2位</text></view>
+            </view>
+            <view class="direct">
+                <view class="diImg"><image src="../images/liwu.png" style="width:60rpx;" mode="widthFix"></image></view>
+                <view class="gaodu"><view class="height" style="height:160rpx;"></view></view>
+                <view class="bottom"><text>10位</text></view>
+            </view>
+            <view class="direct">
+                <view class="diImg"><image src="../images/liwu.png" style="width:60rpx;" mode="widthFix"></image></view>
+                <view class="gaodu"><view class="height" style="height:220rpx;"></view></view>
+                <view class="bottom"><text>20位</text></view>
+            </view>
+            <view class="direct">
+                <view class="diImg"><image src="../images/liwu.png" style="width:60rpx;" mode="widthFix"></image></view>
+                <view class="gaodu"><view class="height" style="height:260rpx;"></view></view>
+                <view class="bottom"><text>50位</text></view>
+            </view>
+        </view>
+    </view>
   </view>
 
   <!-- <view class='invite_btn'>立即邀请</view> -->

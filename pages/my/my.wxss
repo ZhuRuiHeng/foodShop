@@ -147,9 +147,13 @@
 }
 .kefu{
   padding:20rpx;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index:9;
 }
 contact-button{
-  padding:20rpx 20rpx 20rpx 40rpx;
+  padding:20rpx 20rpx 20rpx 20rpx;
 }
 .xuanze.bottom.page-body-line{
    font-size:26rpx;
